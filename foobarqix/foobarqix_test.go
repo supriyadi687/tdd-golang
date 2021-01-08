@@ -48,5 +48,9 @@ func TestDivisibleBy3AndContains7ShouldReturnBarBar(t *testing.T) {
 	assert.Equal(t, result, "QixQix")
 }
 
+func TestGivenInputIs13ShouldReturnFoo(t *testing.T) {
+	result := Compute("13")
+	assert.Equal(t, result, "Foo")
+}
 
 
