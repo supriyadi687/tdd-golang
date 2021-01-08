@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestNotDivisibleBy35And7ShouldReturnNumber(t *testing.T) {
-	result := Compute(1)
-	assert.Equal(t, result, "1")
+func TestDivisibleBy3ShouldReturnFoo(t *testing.T) {
+	result := Compute("6")
+	assert.Equal(t, result, "Foo")
 }
