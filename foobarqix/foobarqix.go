@@ -30,6 +30,10 @@ func Compute(input string) string {
 		if d == "3" {
 			result += "Foo"
 		}
+
+		if d == "5" {
+			result += "Bar"
+		}
 	}
 
 	if result == "" {
