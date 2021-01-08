@@ -31,4 +31,9 @@ func TestNotDivisibleBy35And7ShouldReturnNumber(t *testing.T) {
 	assert.Equal(t, result, "8")
 }
 
+func TestDivisibleBy3AndContains3ShouldReturnFooFoo(t *testing.T) {
+	result := Compute("3")
+	assert.Equal(t, result, "FooFoo")
+}
+
 
