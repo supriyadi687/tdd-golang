@@ -53,4 +53,28 @@ func TestGivenInputIs13ShouldReturnFoo(t *testing.T) {
 	assert.Equal(t, result, "Foo")
 }
 
+func TestGivenInputIs15ShouldReturnFooBarBar(t *testing.T) {
+	result := Compute("15")
+	assert.Equal(t, result, "FooBarBar")
+}
 
+func TestGivenInputIs21ShouldReturnFooQix(t *testing.T) {
+	result := Compute("21")
+	assert.Equal(t, result, "FooQix")
+}
+
+
+func TestGivenInputIs33ShouldReturnFooFooFoo(t *testing.T) {
+	result := Compute("33")
+	assert.Equal(t, result, "FooFooFoo")
+}
+
+func TestGivenInputIs51ShouldReturnFooBar(t *testing.T) {
+	result := Compute("51")
+	assert.Equal(t, result, "FooBar")
+}
+
+func TestGivenInputIs53ShouldReturnBarFoo(t *testing.T) {
+	result := Compute("53")
+	assert.Equal(t, result, "BarFoo")
+}
