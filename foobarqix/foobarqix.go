@@ -49,6 +49,9 @@ func processDivisibleRules(number int, result string) string {
 func processDigits(input string, result string) string {
 	digits := strings.Split(input, "")
 	for _, d := range digits {
+		if d == "0" {
+			result += "*"
+		}
 		if d == strconv.Itoa(FooNumber) {
 			result += FOO
 		}
