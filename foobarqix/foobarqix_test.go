@@ -14,7 +14,7 @@ func TestDivisibleBy3ShouldReturnFoo(t *testing.T) {
 
 func TestDivisibleBy5ShouldReturnBar(t *testing.T) {
 	result := Compute("10")
-	assert.Equal(t, result, "Bar")
+	assert.Equal(t, result, "Bar*")
 }
 
 func TestDivisibleBy7ShouldReturnQix(t *testing.T) {
@@ -77,4 +77,9 @@ func TestGivenInputIs51ShouldReturnFooBar(t *testing.T) {
 func TestGivenInputIs53ShouldReturnBarFoo(t *testing.T) {
 	result := Compute("53")
 	assert.Equal(t, result, "BarFoo")
+}
+
+func TestGivenInputIs303ShouldReturnFooFooAsteriskFoo(t *testing.T) {
+	result := Compute("303")
+	assert.Equal(t, result, "FooFoo*Foo")
 }
