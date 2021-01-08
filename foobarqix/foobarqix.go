@@ -1,23 +1,39 @@
 package foobarqix
 
-import "strconv"
+import (
+	"strconv"
+	"strings"
+)
 
 func Compute(input string) string {
 	number, err := strconv.Atoi(input)
 	if err != nil {
 		return "unable to parse input"
 	}
+
+	result := ""
+
 	if number % 3 == 0 {
-		return "Foo"
+		result += "Foo"
 	}
 
 	if number % 5 == 0 {
-		return "Bar"
+		result += "Bar"
 	}
 
 	if number % 7 == 0 {
-		return "Qix"
+		result += "Qix"
 	}
 
-	return strconv.Itoa(number)
+	digits := strings.Split(input, "")
+	for _, d := range digits {
+		if d == "3" {
+			result += "Foo"
+		}
+	}
+
+	if result == "" {
+		return strconv.Itoa(number)
+	}
+	return result
 }
