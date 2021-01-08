@@ -8,6 +8,8 @@ import (
 func TestDivisibleBy3ShouldReturnFoo(t *testing.T) {
 	result := Compute("6")
 	assert.Equal(t, result, "Foo")
+	result = Compute("9")
+	assert.Equal(t, result, "Foo")
 }
 
 func TestDivisibleBy5ShouldReturnBar(t *testing.T) {
@@ -45,5 +47,6 @@ func TestDivisibleBy3AndContains7ShouldReturnBarBar(t *testing.T) {
 	result := Compute("7")
 	assert.Equal(t, result, "QixQix")
 }
+
 
 
