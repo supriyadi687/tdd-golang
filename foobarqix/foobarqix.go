@@ -34,6 +34,10 @@ func Compute(input string) string {
 		if d == "5" {
 			result += "Bar"
 		}
+
+		if d == "7" {
+			result += "Qix"
+		}
 	}
 
 	if result == "" {
