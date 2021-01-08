@@ -15,5 +15,9 @@ func Compute(input string) string {
 		return "Bar"
 	}
 
+	if number % 7 == 0 {
+		return "Qix"
+	}
+
 	return strconv.Itoa(number)
 }
