@@ -15,3 +15,8 @@ func TestDivisibleBy5ShouldReturnBar(t *testing.T) {
 	assert.Equal(t, result, "Bar")
 }
 
+func TestDivisibleBy7ShouldReturnQix(t *testing.T) {
+	result := Compute("14")
+	assert.Equal(t, result, "Qix")
+}
+
