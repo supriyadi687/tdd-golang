@@ -31,19 +31,20 @@ func Compute(input string) string {
 }
 
 func processDivisibleRules(number int, result string) string {
-	if number%FooNumber == 0 {
+	if isDivisible(number, FooNumber) {
 		result += FOO
 	}
 
-	if number%BarNumber == 0 {
+	if isDivisible(number, BarNumber) {
 		result += BAR
 	}
 
-	if number%QixNumber == 0 {
+	if isDivisible(number, QixNumber) {
 		result += QIX
 	}
 	return result
 }
+
 
 func processDigits(input string, result string) string {
 	digits := strings.Split(input, "")
@@ -61,4 +62,8 @@ func processDigits(input string, result string) string {
 		}
 	}
 	return result
+}
+
+func isDivisible(number int, divisor int) bool {
+	return number%divisor == 0
 }
