@@ -1,4 +1,5 @@
 package foobarqix
 
-func Compute(input int) string {
+func Compute(input string) string {
+	return "Foo"
 }
