@@ -94,3 +94,8 @@ func TestGivenInputIs101015ShouldReturnFooFooAsteriskFoo(t *testing.T) {
 	result := Compute("10101")
 	assert.Equal(t, result, "FooQix**")
 }
+
+func TestGivenInputIs1015ShouldReturnFooFooAsteriskFoo(t *testing.T) {
+	result := Compute("101")
+	assert.Equal(t, result, "1*1")
+}

@@ -1,6 +1,7 @@
 package foobarqix
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -20,11 +21,11 @@ func Compute(input string) string {
 		return "unable to parse input"
 	}
 
-	result = processDivisibleRules(number, result)
-	result = processDigits(input, result)
-
-	if result == "" {
-		return strconv.Itoa(number)
+	if shouldProcess(number) {
+		result = processDivisibleRules(number, result)
+		result = processDigits(input, result, false)
+	} else {
+		result = processDigits(input, result, true)
 	}
 
 	return result
@@ -46,12 +47,20 @@ func processDivisibleRules(number int, result string) string {
 }
 
 
-func processDigits(input string, result string) string {
+func processDigits(input string, result string, unprocessed bool) string {
 	digits := strings.Split(input, "")
 	for _, d := range digits {
+
 		if d == "0" {
 			result += "*"
 		}
+
+		if unprocessed && d != "0" {
+			fmt.Println(d)
+			result += d
+			continue
+		}
+
 		if d == strconv.Itoa(FooNumber) {
 			result += FOO
 		}
@@ -67,6 +76,17 @@ func processDigits(input string, result string) string {
 	return result
 }
 
-func isDivisible(number int, divisor int) bool {
-	return number%divisor == 0
+func isDivisible(input int, divisor int) bool {
+	return input%divisor == 0
+}
+
+func shouldProcess(input int) bool {
+	inputString := strconv.Itoa(input)
+	process := isDivisible(input, FooNumber) ||
+		  isDivisible(input, BarNumber) ||
+		  isDivisible(input, QixNumber) ||
+		strings.Contains(inputString, "3") ||
+		strings.Contains(inputString, "5") ||
+		strings.Contains(inputString, "7")
+	return process
 }
