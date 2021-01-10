@@ -83,3 +83,14 @@ func TestGivenInputIs303ShouldReturnFooFooAsteriskFoo(t *testing.T) {
 	result := Compute("303")
 	assert.Equal(t, result, "FooFoo*Foo")
 }
+
+func TestGivenInputIs105ShouldReturnFooFooAsteriskFoo(t *testing.T) {
+	result := Compute("105")
+	assert.Equal(t, result, "FooBarQix*Bar")
+}
+
+
+func TestGivenInputIs101015ShouldReturnFooFooAsteriskFoo(t *testing.T) {
+	result := Compute("10101")
+	assert.Equal(t, result, "FooQix**")
+}
